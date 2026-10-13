@@ -1,19 +1,31 @@
+
 class Solution {
 public:
     string removeDuplicates(string s) {
-        string result = "";
-        for(char c : s){
-            // if the result string is not empty
-            if(!result.empty() && result.back() == c){
-             result.pop_back(); 
-            //  remove the duplicate (pop) 
+        vector<char> res;
+        stack<char> st;
+        int n = s.size();
 
+        for (int i = 0; i < n; i++) {
+            if (st.empty()) 
+            {
+                st.push(s[i]);
+                res.push_back(s[i]);
             }
-            else{
-                result.push_back(c);
-                // Otherwise, add the character (push)
+            else {
+                char c = s[i];
+
+                if (st.top() == c) {
+                    st.pop();
+                    res.pop_back();
+                }
+                else {
+                    st.push(s[i]);
+                    res.push_back(s[i]);
+                }
             }
         }
-        return result;
+
+        return string(res.begin(), res.end());
     }
 };
