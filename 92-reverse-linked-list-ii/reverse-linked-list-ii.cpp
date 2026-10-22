@@ -14,10 +14,10 @@ public:
         if (!head || left == right) return head;
 
         
-        ListNode* dummy = new ListNode(0);
-        dummy->next = head;
+        // ListNode* dummy = new ListNode(0);
+        // dummy->next = head;
        ListNode* t = head;
-       ListNode* before = dummy;
+       ListNode* before = nullptr;
        int pos = 1;
        while(pos < left){
         before = t;
@@ -36,9 +36,12 @@ public:
        }
 
        t->next = curr;
-       before->next = prev;
+       if(before){
+        before->next = prev;
+        return head;
+       }
 
-       return dummy->next;
+       return prev;
 
 
 
