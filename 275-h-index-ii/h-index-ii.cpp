@@ -15,12 +15,12 @@ public:
        int low = 0;
        int high = n;
        int res = 0;
-       if(n == 1){
-            if(citations[0] == 0)
-                return 0;
-       else
-        return 1;
-       }
+    //    if(n == 1){
+    //         if(citations[0] == 0)
+    //             return 0;
+    //    else
+    //     return 1;
+    //    }
        while(low <= high){
             int mid = low + (high-low)/2;
             if(possible(citations,mid)){
