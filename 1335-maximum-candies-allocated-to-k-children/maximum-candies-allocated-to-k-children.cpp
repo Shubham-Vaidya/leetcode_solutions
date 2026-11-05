@@ -1,11 +1,11 @@
 class Solution {
 public:
     int maximumCandies(vector<int>& candies, long long k) {
-        sort(candies.begin(), candies.end());
+        // sort(candies.begin(), candies.end());
 
         long long n = candies.size();
         long long low = 1;
-        long long high = candies[n-1];
+        long long high = *max_element(candies.begin(), candies.end());
 
         if(k > n){
             long long sum = 0;
