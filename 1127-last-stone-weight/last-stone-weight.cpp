@@ -15,7 +15,7 @@ public:
                 pq.pop();
                 int res = high - low;
                 if(res > 0) pq.push(res);
-                if(pq.size() == 1) return pq.top();
+                // if(pq.size() == 1) return pq.top();
             }
         }
         return 0;
